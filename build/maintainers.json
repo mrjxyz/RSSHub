@@ -8375,7 +8375,13 @@
     "synchrone",
     "pseudoyu"
   ],
+  "/temponw/estates/:area?": [
+    "pseudoyu"
+  ],
   "/temposmart/estates/:pref?": [
+    "pseudoyu"
+  ],
+  "/tenant-shop/chintai/:pref?/:type?": [
     "pseudoyu"
   ],
   "/tencent/pvp/newsindex/:type": [

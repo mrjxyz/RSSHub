@@ -13086,6 +13086,49 @@ export default {
     "url": "aliresearch.com",
     "lang": "zh-CN"
   },
+  "app-center": {
+    "routes": {
+      "/release/:user/:app/:distribution_group": {
+        "path": "/release/:user/:app/:distribution_group",
+        "categories": [
+          "program-update"
+        ],
+        "example": "/app-center/release/cloudflare/1.1.1.1-windows/beta",
+        "parameters": {
+          "user": "User",
+          "app": "App name",
+          "distribution_group": "Distribution group"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "install.appcenter.ms/users/:user/apps/:app/distribution_groups/:distribution_group",
+              "install.appcenter.ms/orgs/:user/apps/:app/distribution_groups/:distribution_group"
+            ]
+          }
+        ],
+        "name": "Release",
+        "maintainers": [
+          "Rongronggg9"
+        ],
+        "description": "::: tip\nThe parameters can be extracted from the Release page URL: `https://install.appcenter.ms/users/:user/apps/:app/distribution_groups/:distribution_group`\n:::",
+        "location": "release.tsx",
+        "module": () => import('@/routes/app-center/release.tsx')
+      }
+    },
+    "apiRoutes": {},
+    "name": "App Center",
+    "url": "install.appcenter.ms",
+    "lang": "en"
+  },
   "artstation": {
     "routes": {
       "/:handle": {
@@ -53036,6 +53079,39 @@ export default {
     "name": "Devtrium",
     "url": "devtrium.com",
     "lang": "en"
+  },
+  "dgjyw": {
+    "routes": {
+      "/:category{.+}?": {
+        "path": "/:category{.+}?",
+        "categories": [
+          "study"
+        ],
+        "example": "/dgjyw/tz",
+        "parameters": {
+          "category": "分类，见下表，默认为通知"
+        },
+        "radar": [
+          {
+            "source": [
+              "www.dgjyw.com/:category.htm"
+            ],
+            "target": "/:category"
+          }
+        ],
+        "name": "分类",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "description": "| 通知 | 动态 | 公示 |\n| ---- | ---- | ---- |\n| tz   | dt   | gs   |\n\n::: tip\n分类字段处填写的是对应东莞教研网网址中介于 `https://www.dgjyw.com/` 和 `.htm` 中间的一段。\n\n如 [通知](https://www.dgjyw.com/tz.htm) 的网址为 `https://www.dgjyw.com/tz.htm`，其中间字段为 `tz`，所以可得路由为 [`/dgjyw/tz`](https://rsshub.app/dgjyw/tz)；\n\n同理，[教育科研 - 科研文件](https://www.dgjyw.com/jyky/kywj.htm) 的网址为 `https://www.dgjyw.com/jyky/kywj.htm`，其中间字段为 `jyky/kywj`，所以可得路由为 [`/dgjyw/jyky/kywj`](https://rsshub.app/dgjyw/jyky/kywj)。\n:::",
+        "location": "index.ts",
+        "module": () => import('@/routes/dgjyw/index.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "东莞教研网",
+    "url": "dgjyw.com",
+    "lang": "zh-CN"
   },
   "dgtle": {
     "routes": {
@@ -117943,6 +118019,44 @@ export default {
   },
   "tencent": {
     "routes": {
+      "/news/coronavirus/data/:province?/:city?": {
+        "path": "/news/coronavirus/data/:province?/:city?",
+        "categories": [
+          "other"
+        ],
+        "example": "/tencent/news/coronavirus/data/湖北/武汉",
+        "parameters": {
+          "province": "省/直辖市名，缺省则返回国内数据",
+          "city": "城市名，缺省则返回全省数据。直辖市请使用区/县名。"
+        },
+        "name": "新型冠状病毒肺炎疫情实时追踪 - 省市疫情数据",
+        "maintainers": [
+          "CaoMeiYouRen"
+        ],
+        "location": "news/coronavirus/data.tsx",
+        "module": () => import('@/routes/tencent/news/coronavirus/data.tsx')
+      },
+      "/news/coronavirus/total": {
+        "path": "/news/coronavirus/total",
+        "categories": [
+          "other"
+        ],
+        "example": "/tencent/news/coronavirus/total",
+        "radar": [
+          {
+            "source": [
+              "new.qq.com/zt2020/page/feiyan.htm"
+            ]
+          }
+        ],
+        "name": "新型冠状病毒肺炎疫情实时追踪 - 中国本土数据统计",
+        "maintainers": [
+          "CaoMeiYouRen"
+        ],
+        "url": "new.qq.com/zt2020/page/feiyan.htm",
+        "location": "news/coronavirus/total.tsx",
+        "module": () => import('@/routes/tencent/news/coronavirus/total.tsx')
+      },
       "/pvp/newsindex/:type": {
         "path": "/pvp/newsindex/:type",
         "categories": [
@@ -126459,6 +126573,44 @@ export default {
     "url": "wiensued.at",
     "description": "Gemeinnützige Bau- u. Wohnungsgenossenschaft „Wien-Süd“ eingetragene Genossenschaft m.b.H."
   },
+  "wikinews": {
+    "routes": {
+      "/latest": {
+        "path": "/latest",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/wikinews/latest",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "zh.wikinews.org/wiki/Special:新闻订阅"
+            ]
+          }
+        ],
+        "name": "最新新闻",
+        "maintainers": [
+          "KotoriK"
+        ],
+        "description": "根据维基新闻的[sitemap](https://zh.wikinews.org/wiki/Special:%E6%96%B0%E9%97%BB%E8%AE%A2%E9%98%85)获取新闻全文。目前仅支持中文维基新闻。",
+        "location": "index.ts",
+        "module": () => import('@/routes/wikinews/index.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "维基新闻",
+    "url": "zh.wikinews.org",
+    "lang": "zh-CN"
+  },
   "wikipedia": {
     "routes": {
       "/current-events/:includeToday?": {
@@ -128569,6 +128721,35 @@ export default {
         "description": "The official Atom feed (/feed/all/) truncates every entry to a 128 character summary and carries no category tags. This route fetches the full body from each detail page and extracts the tags of that page into category.",
         "location": "index.ts",
         "module": () => import('@/routes/xml/index.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "XML.com",
+    "url": "www.xml.com",
+    "lang": "en"
+  },
+  "xmlcom": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "categories": [
+          "programming"
+        ],
+        "example": "/xmlcom",
+        "name": "Articles and News",
+        "maintainers": [
+          "AboutRSS"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.xml.com/"
+            ]
+          }
+        ],
+        "description": "The official Atom feed (/feed/all/) truncates every entry to a 128 character summary and carries no category tags. This route fetches the full body from each detail page and extracts the tags of that page into category.",
+        "location": "index.ts",
+        "module": () => import('@/routes/xmlcom/index.ts')
       }
     },
     "apiRoutes": {},
@@ -131539,6 +131720,30 @@ export default {
   },
   "zhibo8": {
     "routes": {
+      "/forum/:id": {
+        "path": "/forum/:id",
+        "categories": [
+          "bbs"
+        ],
+        "example": "/zhibo8/forum/8",
+        "parameters": {
+          "id": "子论坛 id，可在子论坛 URL 找到"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "子论坛",
+        "maintainers": [
+          "LogicJake"
+        ],
+        "location": "forum.ts",
+        "module": () => import('@/routes/zhibo8/forum.ts')
+      },
       "/luxiang/:category?": {
         "path": "/luxiang/:category?",
         "categories": [
@@ -131596,6 +131801,30 @@ export default {
         ],
         "location": "more.ts",
         "module": () => import('@/routes/zhibo8/more.ts')
+      },
+      "/post/:id": {
+        "path": "/post/:id",
+        "categories": [
+          "bbs"
+        ],
+        "example": "/zhibo8/post/3050708",
+        "parameters": {
+          "id": "帖子 id，可在帖子 URL 找到"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "回帖",
+        "maintainers": [
+          "LogicJake"
+        ],
+        "location": "post.ts",
+        "module": () => import('@/routes/zhibo8/post.ts')
       }
     },
     "apiRoutes": {},
@@ -135532,18 +135761,17 @@ export default {
         "radar": [
           {
             "source": [
-              "bandcamp.com/live_schedule",
-              "bandcamp.com/live"
+              "bandcamp.com/live_schedule"
             ]
           }
         ],
-        "name": "Upcoming Live Events",
+        "name": "Upcoming Live Streams",
         "maintainers": [
           "nczitzk"
         ],
-        "url": "bandcamp.com/live",
-        "location": "live.tsx",
-        "module": () => import('@/routes/bandcamp/live.tsx')
+        "url": "bandcamp.com/live_schedule",
+        "location": "live.ts",
+        "module": () => import('@/routes/bandcamp/live.ts')
       },
       "/weekly": {
         "path": "/weekly",
@@ -155880,6 +156108,36 @@ export default {
         "location": "home.ts",
         "module": () => import('@/routes/lfsyd/home.ts')
       },
+      "/old_home": {
+        "path": "/old_home",
+        "categories": [
+          "game"
+        ],
+        "example": "/lfsyd/old_home",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.iyingdi.com/"
+            ]
+          }
+        ],
+        "name": "首页（旧版）",
+        "maintainers": [
+          "auto-bot-ty"
+        ],
+        "url": "www.iyingdi.com/",
+        "location": "old-home.ts",
+        "module": () => import('@/routes/lfsyd/old-home.ts')
+      },
       "/tag/:tagId?": {
         "path": "/tag/:tagId?",
         "categories": [
@@ -155999,6 +156257,31 @@ export default {
   },
   "linkedin": {
     "routes": {
+      "/cn/jobs/:keywords?": {
+        "path": "/cn/jobs/:keywords?",
+        "categories": [
+          "other"
+        ],
+        "example": "/linkedin/cn/jobs/Software",
+        "parameters": {
+          "keywords": "搜索关键字"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Jobs",
+        "maintainers": [
+          "bigfei"
+        ],
+        "description": "另外，可以通过添加额外的以下 query 参数来输出满足特定要求的工作职位：\n\n| 参数       | 描述                                              | 举例                                                    | 默认值  |\n| ---------- | ------------------------------------------------- | ------------------------------------------------------- | ------- |\n| `geo`      | geo 编码                                          | 102890883（中国）、102772228（上海）、103873152（北京） | 空      |\n| `remote`   | 是否只显示远程工作                                | `true/false`                                            | `false` |\n| `location` | 工作地点                                          | `china/shanghai/beijing`                                | 空      |\n| `relevant` | 排序方式 (true: 按相关性排序，false： 按日期排序) | `true/false`                                            | `false` |\n| `period`   | 发布时间                                          | `1/7/30`                                                | 空      |\n\n例如：\n[`/linkedin/cn/jobs/Software?location=shanghai&period=1`](https://rsshub.app/linkedin/cn/jobs/Software?location=shanghai\\&period=1): 查找所有在上海的今日发布的所有 Software 工作\n\n**为了方便起见，建议您在 [LinkedIn.cn](https://www.linkedin.cn/incareer/jobs/search) 上进行搜索，并使用 [RSSHub Radar](https://github.com/DIYgod/RSSHub-Radar) 加载特定的 feed。**",
+        "location": "cn/index.ts",
+        "module": () => import('@/routes/linkedin/cn/index.ts')
+      },
       "/company/:company_id/posts": {
         "path": "/company/:company_id/posts",
         "categories": [
@@ -158567,6 +158850,27 @@ export default {
   },
   "openai": {
     "routes": {
+      "/chatgpt-atlas/release-notes": {
+        "path": "/chatgpt-atlas/release-notes",
+        "categories": [
+          "program-update"
+        ],
+        "example": "/openai/chatgpt-atlas/release-notes",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "ChatGPT Atlas - Release Notes",
+        "maintainers": [
+          "xbot"
+        ],
+        "location": "chatgpt-atlas.ts",
+        "module": () => import('@/routes/openai/chatgpt-atlas.ts')
+      },
       "/chatgpt/release-notes": {
         "path": "/chatgpt/release-notes",
         "categories": [
@@ -162143,6 +162447,25 @@ export default {
   },
   "theinitium": {
     "routes": {
+      "/follow/articles/:language?": {
+        "path": "/follow/articles/:language?",
+        "name": "个人订阅追踪动态（已停用）",
+        "maintainers": [
+          "AgFlore",
+          "pseudoyu"
+        ],
+        "parameters": {
+          "language": "语言"
+        },
+        "radar": [],
+        "example": "/theinitium/follow/articles",
+        "categories": [
+          "new-media"
+        ],
+        "description": "::: warning\n此路由已停用。端传媒已迁移到 Ghost CMS，不再支持通过 API 获取个人追踪内容。请改用标签或栏目订阅。\n:::",
+        "location": "follow.ts",
+        "module": () => import('@/routes/theinitium/follow.ts')
+      },
       "/app/:category?": {
         "path": "/app/:category?",
         "categories": [

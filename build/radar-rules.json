@@ -1173,6 +1173,16 @@
         "target": "/qqmusic/album/:mid"
       }
     ],
+    "new": [
+      {
+        "title": "新型冠状病毒肺炎疫情实时追踪 - 中国本土数据统计",
+        "docs": "https://docs.rsshub.app/routes/tencent",
+        "source": [
+          "/zt2020/page/feiyan.htm"
+        ],
+        "target": "/tencent/news/coronavirus/total"
+      }
+    ],
     "news": [
       {
         "title": "当前作者文章",
@@ -3521,6 +3531,20 @@
           "/"
         ],
         "target": "/aliresearch/information"
+      }
+    ]
+  },
+  "appcenter.ms": {
+    "_name": "App Center",
+    "install": [
+      {
+        "title": "Release",
+        "docs": "https://docs.rsshub.app/routes/app-center",
+        "source": [
+          "/users/:user/apps/:app/distribution_groups/:distribution_group",
+          "/orgs/:user/apps/:app/distribution_groups/:distribution_group"
+        ],
+        "target": "/app-center/release/:user/:app/:distribution_group"
       }
     ]
   },
@@ -19529,6 +19553,19 @@
           "/"
         ],
         "target": "/devtrium/"
+      }
+    ]
+  },
+  "dgjyw.com": {
+    "_name": "东莞教研网",
+    "www": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/dgjyw",
+        "source": [
+          "/:category.htm"
+        ],
+        "target": "/dgjyw/:category"
       }
     ]
   },
@@ -50301,6 +50338,19 @@
       }
     ]
   },
+  "wikinews.org": {
+    "_name": "维基新闻",
+    "zh": [
+      {
+        "title": "最新新闻",
+        "docs": "https://docs.rsshub.app/routes/wikinews",
+        "source": [
+          "/wiki/Special:%E6%96%B0%E9%97%BB%E8%AE%A2%E9%98%85"
+        ],
+        "target": "/wikinews/latest"
+      }
+    ]
+  },
   "wikipedia.org": {
     "_name": "Wikipedia",
     "en": [
@@ -50695,6 +50745,14 @@
           "/"
         ],
         "target": "/xml/"
+      },
+      {
+        "title": "Articles and News",
+        "docs": "https://docs.rsshub.app/routes/xmlcom",
+        "source": [
+          "/"
+        ],
+        "target": "/xmlcom/"
       }
     ]
   },
@@ -52519,11 +52577,10 @@
     "_name": "Bandcamp",
     ".": [
       {
-        "title": "Upcoming Live Events",
+        "title": "Upcoming Live Streams",
         "docs": "https://docs.rsshub.app/routes/bandcamp",
         "source": [
-          "/live_schedule",
-          "/live"
+          "/live_schedule"
         ],
         "target": "/bandcamp/live"
       },
@@ -59113,6 +59170,14 @@
           "/"
         ],
         "target": "/lfsyd/home"
+      },
+      {
+        "title": "首页（旧版）",
+        "docs": "https://docs.rsshub.app/routes/lfsyd",
+        "source": [
+          "/"
+        ],
+        "target": "/lfsyd/old_home"
       },
       {
         "title": "用户的帖子",

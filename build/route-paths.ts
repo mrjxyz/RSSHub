@@ -229,6 +229,7 @@ export type RoutePath =
   | `/apnews/sitemap/:route`
   | `/apnews/topics/:topic?`
   | `/apnic/blog`
+  | `/app-center/release/:user/:app/:distribution_group`
   | `/app-sales/:category?/:country?`
   | `/app-sales/mostwanted/:time?/:country?`
   | `/apple/apps/update/:country/:id/:platform?`
@@ -901,6 +902,7 @@ export type RoutePath =
   | `/devtrium/`
   | `/dewu/declaration/:categoryId?`
   | `/dewu/techblog/:categoryId?`
+  | `/dgjyw/:category{.+}?`
   | `/dgtle/`
   | `/dgtle/article/:id?/:pushed?`
   | `/dgtle/feed`
@@ -2107,6 +2109,7 @@ export type RoutePath =
   | `/letterboxd/user/diary/:username`
   | `/letterboxd/user/followingdiary/:username`
   | `/lfsyd/home`
+  | `/lfsyd/old_home`
   | `/lfsyd/tag/:tagId?`
   | `/lfsyd/user/:id?`
   | `/lg/osaka/food-permit`
@@ -2124,6 +2127,7 @@ export type RoutePath =
   | `/lineageos/changes`
   | `/link3/events`
   | `/link3/profile/:handle`
+  | `/linkedin/cn/jobs/:keywords?`
   | `/linkedin/company/:company_id/posts`
   | `/linkedin/jobs/:job_types/:exp_levels/:keywords?/:routeParams?`
   | `/linkresearcher/:params`
@@ -2628,6 +2632,7 @@ export type RoutePath =
   | `/onet/news`
   | `/onlyfans/:username`
   | `/oo-software/changelog/:id`
+  | `/openai/chatgpt-atlas/release-notes`
   | `/openai/chatgpt/release-notes`
   | `/openai/cookbook`
   | `/openai/news`
@@ -3347,6 +3352,8 @@ export type RoutePath =
   | `/tenant-shop/chintai/:pref?/:type?`
   | `/tencent/cloud/developer/column/:categoryId?`
   | `/tencent/news/author/:mid`
+  | `/tencent/news/coronavirus/data/:province?/:city?`
+  | `/tencent/news/coronavirus/total`
   | `/tencent/pvp/newsindex/:type`
   | `/tencent/qcloud/mlvb/changelog`
   | `/tencent/qq/sdk/changelog/:platform`
@@ -3373,6 +3380,7 @@ export type RoutePath =
   | `/theinitium/app/:category?`
   | `/theinitium/author/:type/:language?`
   | `/theinitium/channel/:type?/:language?`
+  | `/theinitium/follow/articles/:language?`
   | `/theinitium/tags/:type/:language?`
   | `/themoviedb/:mediaType/:sheet/:lang?`
   | `/themoviedb/collection/:id/:lang?`
@@ -3698,6 +3706,7 @@ export type RoutePath =
   | `/whu/rsgis/:type/:sub?`
   | `/whu/swrh/:type`
   | `/wiensued/:path{.+}?`
+  | `/wikinews/latest`
   | `/wikipedia/current-events/:includeToday?`
   | `/windsurf/blog`
   | `/windsurf/changelog`
@@ -3789,6 +3798,7 @@ export type RoutePath =
   | `/xmanhua/:uid`
   | `/xmind/mindmap/:lang?`
   | `/xml/`
+  | `/xmlcom/`
   | `/xmnn/epaper/:id?`
   | `/xmnn/news/:category{.+}?`
   | `/xmu/aero/:type`
@@ -3925,8 +3935,10 @@ export type RoutePath =
   | `/zcool/top/:type`
   | `/zcool/user/:uid`
   | `/zed/blog`
+  | `/zhibo8/forum/:id`
   | `/zhibo8/luxiang/:category?`
   | `/zhibo8/more/:category?`
+  | `/zhibo8/post/:id`
   | `/zhihu/bookstore/newest`
   | `/zhihu/collection/:id/:getAll?`
   | `/zhihu/daily`

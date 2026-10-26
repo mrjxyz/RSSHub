@@ -139,7 +139,7 @@ const parseAttr = (description) => {
         while (0 < n.length && n.at(-1)!.attr.start >= w) {
             p.children.push(n.pop());
         }
-        p.children.reverse();
+        p.children = p.children.toReversed();
         n.push(p);
     }
 
